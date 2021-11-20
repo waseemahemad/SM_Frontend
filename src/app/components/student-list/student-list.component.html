@@ -1,0 +1,43 @@
+<div class="panel panel-default">  
+  <div class="panel-heading">  
+      <h1 style="text-align: center">Students</h1><br>  
+      <div class="row" [hidden]="!deleteMessage">  
+             
+                <div class="col-sm-4"></div>  
+                <div class="col-sm-4">  
+                        <div class="alert alert-info alert-dismissible">  
+                                <button type="button" class="close" data-dismiss="alert">×</button>  
+                                <strong>Student Data Deleted</strong>  
+                        </div>  
+                </div>  
+                <div class="col-sm-4"></div>  
+        </div>             
+    </div>  
+  
+    
+  <div class="panel-body">  
+      <table  class="table table-hover table-sm"   >  
+          <thead class="thead-light">  
+              <tr>  
+                  <th>Student Name</th>  
+                  <th>Student Email</th>  
+                  <th>Student Branch</th>  
+                  <th>Action</th>  
+                    
+              </tr>  
+          </thead>  
+          <tbody>  
+               <tr *ngFor="let students of student ">  
+                  <td>{{students.student_name}}</td>  
+                  <td>{{student.student_dob}}</td>  
+                  <td>{{student.student_gender}}</td>  
+                  <td><button (click)="deleteStudent(student.student_id)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>   
+                    <button (click)="updateStudent(student.student_id)" class='btn btn-info'  
+                    data-toggle="modal" data-target="#myModal">Update</button>  
+                  </td>  
+                </tr>   
+          </tbody><br>  
+      </table>  
+  </div>  
+</div>   
+  
